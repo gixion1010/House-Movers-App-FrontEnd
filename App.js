@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetStarted from "./components/GetStarted";
 import SignInAs from './components/SignInAs';
+import ForgotPasswordScreen from './components/ForgotPasswordScreen';
 import SignInCustomer from './components/USER/SignInCustomer';
 import SignUpCustomer from './components/USER/SignUpCustomer';
 import SignInTeam from './components/TEAM/SignInTeam';
@@ -35,7 +36,7 @@ export default function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },}}/>
-               <Stack.Screen name="Customer Sign In" component={SignInCustomer} 
+              <Stack.Screen name="Customer Sign In" component={SignInCustomer} 
                options={({ navigation }) => ({
             title: 'Customer Sign In',
             headerStyle: {
@@ -52,6 +53,15 @@ export default function App() {
               </TouchableOpacity>
             ),
           })}/>
+          <Stack.Screen name="Forgot Password" component={ForgotPasswordScreen} options={{
+          headerStyle: {
+            backgroundColor: '#BF9000',
+          },
+          headerTitleAlign: "center",
+          headerTintColor: '#000000',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },}}/>
           <Stack.Screen name="Customer Sign Up" component={SignUpCustomer} options={{
           headerStyle: {
             backgroundColor: '#BF9000',

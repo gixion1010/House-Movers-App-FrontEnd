@@ -95,7 +95,7 @@ const SignInTeam = ({navigation}) => {
         ]} onPress={handleSignIn}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </Pressable>
-        <TouchableOpacity style={styles.buttonForgotPassword} onPress={() => {navigation.navigate('Team Sign In');}}>
+        <TouchableOpacity style={styles.buttonForgotPassword} onPress={() => {navigation.navigate('Forgot Password');}}>
         <Text style={styles.buttonForgotPassword}> Forgot Password? </Text> 
         </TouchableOpacity>
         <Text style={styles.ss}> Dont have account? <Text style = {styles.ff} onPress={() => navigation.replace('Team Sign Up')}>Create a New Account!</Text>
