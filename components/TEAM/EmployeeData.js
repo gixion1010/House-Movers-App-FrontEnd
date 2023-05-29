@@ -121,7 +121,7 @@ const EmployeeData = (navigation) => {
                     />
                 </TouchableHighlight>
             </View>
-            <View style={[styles.innerContainer, { marginTop: 5, flexDirection: 'colomn' }]}>
+            <View style={[styles.innerContainer, { marginTop: 5, flexDirection: 'row' }]}>
                 <Button
                     mode='contained'
                     onPress={pick}
@@ -203,7 +203,7 @@ flex: 1,
 padding: 20
 },
 innerContainer: {
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         marginTop: 10,
     },
