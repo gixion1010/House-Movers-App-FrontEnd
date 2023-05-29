@@ -22,6 +22,7 @@ const VehicleData = () => {
     }
 
     const newVehicle = {
+      id: vehicleList.length + 1,
       vehicleName,
       vehicleModel,
       vehicleManufacturer,
@@ -38,6 +39,18 @@ const VehicleData = () => {
     setVehicleRegisterNumber('');
     setLoadingCapacity('');
     setVehicleCategory("");
+    alert('Vehicle Details Added Successfully');
+  };
+
+  const handleEditVehicle = (id) => {
+    const vehicle = vehicleList.find(veh => veh.id === id);
+    setVehicleName(vehicle.vehicleName);
+    setVehicleModel(vehicle.vehicleModel);
+    setVehicleManufacturer(vehicle.vehicleManufacturer);
+    setVehicleRegisterNumber(vehicle.vehicleRegisterNumber);
+    setLoadingCapacity(vehicle.loadingCapacity);
+    setVehicleCategory(vehicle.vehicleCategory);
+    setVehicleList(vehicleList.filter(veh => veh.id !== id));
   };
 
   const deleteVehicle = (index) => {
@@ -123,18 +136,22 @@ const VehicleData = () => {
           <Text style = {styles.addButtontext}>Add Vehicle </Text>
         </TouchableOpacity>
         <Text style={styles.heading}>Vehicle List:</Text>
-        {vehicleList.map((vehicle, index) => (
-          <View style={styles.vehicleItem} key={index}>
+        {vehicleList.map(vehicle => (
+          <View style={styles.vehicleItem} key={vehicle.id}>
             <Text>{`Name: ${vehicle.vehicleName}`}</Text>
             <Text>{`Model: ${vehicle.vehicleModel}`}</Text>
             <Text>{`Manufacturer: ${vehicle.vehicleManufacturer}`}</Text>
             <Text>{`Register Number: ${vehicle.vehicleRegisterNumber}`}</Text>
             <Text>{`Loading Capacity: ${vehicle.loadingCapacity}`}</Text>
             <Text>{`Category: ${vehicle.vehicleCategory}`}</Text>
+            <View style= {{flexDirection:'row'}}>
+            <TouchableOpacity style={styles.editButton} onPress={() => handleEditVehicle(vehicle.id)}>
+                <Text style={styles.buttonText}>Edit</Text>
+              </TouchableOpacity>
             <TouchableOpacity style={styles.buttonContainerdelete} onPress={() => deleteVehicle(index)}>
                 <Text style = {styles.deleteButtontext}>Delete</Text>
             </TouchableOpacity>
-            
+            </View>
           </View>
         ))}
       </ScrollView>
@@ -161,6 +178,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   input: {
+    height: 40,
+    borderColor: '#000000',
+    borderWidth: 1,
     backgroundColor: 'white',
     padding: 5,
     borderRadius: 5,
@@ -178,6 +198,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#BF9000'
+  },
+  editButton: {
+    backgroundColor: '#007cc3',
+    width:100,
+    alignItems: 'center',
+    justifyContent: 'center', 
+    padding: 5,
+    borderRadius: 5,
+    marginTop: 10,
+    marginRight:5,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black'
   },
   buttonContainerdelete:{
     backgroundColor: 'red',
@@ -201,6 +236,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   vehicleItem: {
+    borderColor: '#000000',
+    borderWidth: 1,
     backgroundColor: 'white',
     padding: 10,
     marginBottom: 10,

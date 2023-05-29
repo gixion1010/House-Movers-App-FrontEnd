@@ -72,7 +72,7 @@ const EmployeeData = (navigation) => {
         setToastMsg('Image Removed');
     }
   const handleAddEmployee = () => {
-  if(image === ''|| name === '' || phone === '' || (phone.length < 11) || cnic === '' || ((cnic.length < 13) && (cnic.length > 13))) {
+  if(image === ''|| name === '' || phone === '' || (phone.length < 11) || (phone.length > 13) ||cnic === '' || ((cnic.length < 13) || (cnic.length > 13))) {
       alert('Please Fill All the Fields Correctly');
     } else {
       const newEmployee = {
@@ -80,7 +80,7 @@ const EmployeeData = (navigation) => {
         name: name,
         phone: phone,
         cnic: cnic,
-        image: image
+        image: imageUri
       };
       setEmployeeList([...employeeList, newEmployee]);
       setName('');
@@ -177,12 +177,14 @@ const EmployeeData = (navigation) => {
               <Text style={styles.employeeName}>Name : {employee.name}</Text>
               <Text style={styles.employeePhone}>Phone# : {employee.phone}</Text>
               <Text style={styles.employeeCnic}>CNIC : {employee.cnic}</Text>
+              <View style= {{flexDirection:'row'}}>
               <TouchableOpacity style={styles.editButton} onPress={() => handleEditEmployee(employee.id)}>
                 <Text style={styles.buttonText}>Edit</Text>
               </TouchableOpacity>
-                        <TouchableOpacity style={styles.deleteButton} onPress={() => handleDeleteEmployee(employee.id)}>
-            <Text style={styles.buttonText}>Delete</Text>
-          </TouchableOpacity>
+              <TouchableOpacity style={styles.deleteButton} onPress={() => handleDeleteEmployee(employee.id)}>
+                <Text style={styles.buttonText}>Delete</Text>
+              </TouchableOpacity>
+              </View>
         </View>
       ))}
     </View>
@@ -235,6 +237,8 @@ marginTop: 20,
 marginBottom:20
 },
 employeeCard: {
+borderColor: '#000000',
+borderWidth: 1,
 backgroundColor: '#bf9000',
 padding: 10,
 borderRadius: 5,
@@ -257,17 +261,23 @@ fontSize: 16,
 marginBottom: 10
 },
 editButton: {
-backgroundColor: '#007cc3',
-width:100,
-padding: 5,
-borderRadius: 5,
-marginBottom: 10
+    backgroundColor: '#007cc3',
+    width:100,
+    alignItems: 'center',
+    justifyContent: 'center', 
+    padding: 5,
+    borderRadius: 5,
+    marginTop: 10,
+    marginRight:5,
 },
 deleteButton: {
-backgroundColor: 'red',
-width:100,
-padding: 5,
-borderRadius: 5
+    backgroundColor: 'red',
+    width:100,
+    alignItems: 'center',
+    justifyContent: 'center', 
+    marginTop: 10,
+    padding: 5,
+    borderRadius: 5
 },
 buttonText: {
 fontSize: 16,
