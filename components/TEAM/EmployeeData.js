@@ -38,7 +38,7 @@ const EmployeeData = (navigation) => {
     const [imageUri, setImageUri] = useState(null);
   
     const setToastMsg = msg => {
-        ToastAndroid.showWithGravity(msg, ToastAndroid.SHORT, ToastAndroid.CENTER);
+        //ToastAndroid.showWithGravity(msg, ToastAndroid.SHORT, ToastAndroid.CENTER);
     }
 
     const permisionFunction = async () => {
@@ -62,8 +62,8 @@ const EmployeeData = (navigation) => {
             quality: 1,
         });
 
-        if (!result.cancelled) {
-            setImageUri(result.uri);
+        if (!result.canceled) {
+            setImageUri(result.imageUri);
         }
     }
 
@@ -116,7 +116,7 @@ const EmployeeData = (navigation) => {
                     onChangeText={handleImageChange}
                 >
                     <Avatar.Image
-                        size={75}
+                        size={95}
                         source={{ uri: imageUri }}
                     />
                 </TouchableHighlight>
@@ -125,14 +125,14 @@ const EmployeeData = (navigation) => {
                 <Button
                     mode='contained'
                     onPress={pick}
-                    style = {{backgroundColor: '#Bf9000'}}
+                    style = {{backgroundColor: '#Bf9000',borderColor: '#000000',borderWidth: 1,marginBottom:10}}
                 >
                     Upload Image
                 </Button>
                 <Button
                     mode='contained'
                     onPress={() => removeImage()}
-                    style={{marginTop : 10, marginBottom : 10 ,backgroundColor: '#Bf9000'}}
+                    style = {{backgroundColor: '#Bf9000',borderColor: '#000000',borderWidth: 1,marginBottom:10}}
                 >
                     Remove Image
                 </Button>
@@ -226,6 +226,8 @@ marginBottom: 10
 },
 addButton: {
 backgroundColor: '#bf9000',
+borderColor: '#000000',
+borderWidth: 1,
 padding: 10,
 marginTop : 10, 
 borderRadius: 5,
