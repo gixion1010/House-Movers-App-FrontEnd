@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
   },
   signOutButton: {
     backgroundColor: '#bf9000',
+    borderColor: '#000000',
+    borderWidth: 1,
     paddingVertical: 15,
     paddingHorizontal: 20,
     alignItems: 'center',
@@ -50,6 +52,8 @@ const styles = StyleSheet.create({
   },
   cancelButton: {
     backgroundColor: '#bf9000',
+    borderColor: '#000000',
+    borderWidth: 1,
     paddingVertical: 15,
     alignItems: 'center',
     justifyContent: 'center',

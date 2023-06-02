@@ -9,6 +9,8 @@ export default function SignInAs({navigation}) {
     // For demonstration purposes, we'll just console log the selected type
     console.log('Sign in as:', type);
   };
+  //gohar here
+  
   return (
     <View style={styles.container}>
       <Image
@@ -69,6 +71,8 @@ const styles = StyleSheet.create({
  button: {
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderRadius: 15,

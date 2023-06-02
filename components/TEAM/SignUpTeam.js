@@ -200,6 +200,8 @@ const styles = StyleSheet.create({
  container2: {
     flexDirection: 'row',
     backgroundColor: '#bf9000',
+    borderColor: '#000000',
+    borderWidth: 1,
     overflow: 'hidden',
     width: 300,
     borderRadius: 25,
@@ -294,6 +296,8 @@ const styles = StyleSheet.create({
   buttonSignUp:{
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderRadius: 15,

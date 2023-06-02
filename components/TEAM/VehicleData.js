@@ -53,10 +53,13 @@ const VehicleData = () => {
     setVehicleList(vehicleList.filter(veh => veh.id !== id));
   };
 
-  const deleteVehicle = (index) => {
-    const updatedList = [...vehicleList];
-    updatedList.splice(index, 1);
-    setVehicleList(updatedList);
+  // const deleteVehicle = (id) => {
+  //   const updatedList = [...vehicleList];
+  //   updatedList.splice(id, 1);
+  //   setVehicleList(updatedList);
+  // };
+   const handleDeleteVehicle = (id) => {
+    setVehicleList(vehicleList.filter(veh => veh.id !== id));
   };
 
   return (
@@ -148,7 +151,7 @@ const VehicleData = () => {
             <TouchableOpacity style={styles.editButton} onPress={() => handleEditVehicle(vehicle.id)}>
                 <Text style={styles.buttonText}>Edit</Text>
               </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainerdelete} onPress={() => deleteVehicle(index)}>
+            <TouchableOpacity style={styles.buttonContainerdelete} onPress={() => handleDeleteVehicle(vehicle.id)}>
                 <Text style = {styles.deleteButtontext}>Delete</Text>
             </TouchableOpacity>
             </View>
