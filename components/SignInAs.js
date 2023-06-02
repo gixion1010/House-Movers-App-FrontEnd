@@ -9,6 +9,9 @@ export default function SignInAs({navigation}) {
     // For demonstration purposes, we'll just console log the selected type
     console.log('Sign in as:', type);
   };
+  //gohar here
+  //gohar qqeqw
+
   return (
     <View style={styles.container}>
       <Image

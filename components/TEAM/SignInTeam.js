@@ -6,18 +6,39 @@ const SignInTeam = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isPasswordEntered, setIsPasswordEntered] = useState(true);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSignIn = () => {
     if (email === '' || password === '') {
-      setShowErrorMessage(true);
+      setError('Empty Feilds');
+      
+
     } else {
-      setShowErrorMessage(false);
-
-      navigation.replace('Team Drawer');
-      // Perform sign-in logic here
-
+      // setError('Please enter a valid email as.');
+      const fdata = {
+        Leader_Email: email,
+        Password: password
+      }
+      fetch('http://127.0.0.1:3000/loginteam',{
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        body : JSON.stringify(fdata)
+      })
+      .then(response => response.json()).then(
+        data=> {
+          if(data.error) {
+            console.log(data.error);
+          }
+          else if (data.login === true) {
+            navigation.replace('Team Drawer');
+          }
+          console.log(data);
+        }
+      )
     }
+    
   };
 
   const validateEmail = (text) => {
@@ -27,7 +48,7 @@ const SignInTeam = ({navigation}) => {
     setEmail(text);
   };
   const goBack = () => {
-    navigation.goBack();
+    navigation.goBack();s
   };
   return (
       <KeyboardAvoidingView
@@ -83,12 +104,11 @@ const SignInTeam = ({navigation}) => {
             <Text style={styles.errorText}>Please enter password</Text>
           )}
         </View>
-        {showErrorMessage && (
-          <Text style={styles.errorMessage}>
-            Please enter both email and password
-          </Text>
-        )}
-        
+      
+        <Text style={styles.errorMessage}>
+            {error}
+        </Text>
+
         <Pressable style={({pressed}) => [
               styles.signInButton,
               pressed && {opacity: 1.8, backgroundColor:'#987200'},
