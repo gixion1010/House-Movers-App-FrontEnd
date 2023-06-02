@@ -27,7 +27,7 @@ const SignInTeam = ({navigation}) => {
     setEmail(text);
   };
   const goBack = () => {
-    navigation.goBack();
+    navigation.goBack();s
   };
   return (
       <KeyboardAvoidingView
