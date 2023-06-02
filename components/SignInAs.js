@@ -12,6 +12,7 @@ export default function SignInAs({navigation}) {
   //gohar here
   //gohar qqeqw
   //gohar 1122
+  //asfa
 
   return (
     <View style={styles.container}>
