@@ -18,6 +18,7 @@ export default function GetStarted({navigation}) {
       </Pressable>
     </View>
   );
+  //usman mahmood 03074621217
 }
 const styles = StyleSheet.create({
   container: {
