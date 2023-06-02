@@ -10,7 +10,8 @@ export default function SignInAs({navigation}) {
     console.log('Sign in as:', type);
   };
   //gohar here
-  
+  //gohar qqeqw
+
   return (
     <View style={styles.container}>
       <Image
