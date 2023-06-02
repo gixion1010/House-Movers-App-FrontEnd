@@ -14,7 +14,6 @@ const SignInTeam = ({navigation}) => {
       
 
     } else {
-      // setError('Please enter a valid email as.');
       const fdata = {
         Leader_Email: email,
         Password: password
