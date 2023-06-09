@@ -16,6 +16,7 @@ const EmployeeData = (navigation) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [cnic, setCnic] = useState('');
+  const [roll, setroll] = useState('');
   const [image, setImage] = useState(null);
   const [employeeList, setEmployeeList] = useState([]);
 
@@ -29,6 +30,9 @@ const EmployeeData = (navigation) => {
 
   const handleCnicChange = (value) => {
     setCnic(value);
+  };
+  const handlerollChange = (value) => {
+    setroll(value);
   };
 
   const handleImageChange = (value) => {
@@ -80,12 +84,14 @@ const EmployeeData = (navigation) => {
         name: name,
         phone: phone,
         cnic: cnic,
+        roll: roll,
         image: imageUri
       };
       setEmployeeList([...employeeList, newEmployee]);
       setName('');
       setPhone('');
       setCnic('');
+      setroll('');
       setImage(null);
       //setImageUri('');
       alert('Employee Details Added Successfully');
@@ -97,6 +103,7 @@ const EmployeeData = (navigation) => {
     setName(employee.name);
     setPhone(employee.phone);
     setCnic(employee.cnic);
+    setroll(employee.roll);    
     setImage(employee.image);
     setEmployeeList(employeeList.filter(emp => emp.id !== id));
   };
@@ -160,7 +167,14 @@ const EmployeeData = (navigation) => {
             value={cnic}
             onChangeText={handleCnicChange}
           />
-          
+          <TextInput
+            style={styles.input}
+            placeholder="roll employee or driver"
+            placeholderTextColor="black"
+            keyboardType="default"
+            value={roll}
+            onChangeText={handlerollChange}
+          />
           <TouchableOpacity style={styles.addButton} onPress={handleAddEmployee}>
             <Text style={styles.buttonText}>Add Employee</Text>
           </TouchableOpacity>
@@ -177,6 +191,7 @@ const EmployeeData = (navigation) => {
               <Text style={styles.employeeName}>Name : {employee.name}</Text>
               <Text style={styles.employeePhone}>Phone# : {employee.phone}</Text>
               <Text style={styles.employeeCnic}>CNIC : {employee.cnic}</Text>
+              <Text style={styles.employeeroll}>Roll : {employee.roll}</Text>
               <View style= {{flexDirection:'row'}}>
               <TouchableOpacity style={styles.editButton} onPress={() => handleEditEmployee(employee.id)}>
                 <Text style={styles.buttonText}>Edit</Text>
