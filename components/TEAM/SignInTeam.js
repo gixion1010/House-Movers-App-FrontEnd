@@ -11,10 +11,7 @@ const SignInTeam = ({navigation}) => {
   const handleSignIn = () => {
     if (email === '' || password === '') {
       setError('Empty Feilds');
-      
-
     } else {
-      // setError('Please enter a valid email as.');
       const fdata = {
         Leader_Email: email,
         Password: password
@@ -32,13 +29,14 @@ const SignInTeam = ({navigation}) => {
             console.log(data.error);
           }
           else if (data.login === true) {
+            // console.log('')
             navigation.replace('Team Drawer');
+
           }
           console.log(data);
         }
       )
     }
-    
   };
 
   const validateEmail = (text) => {
@@ -251,3 +249,4 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+//gohar here
