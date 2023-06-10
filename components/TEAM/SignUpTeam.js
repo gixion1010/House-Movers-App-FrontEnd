@@ -103,7 +103,7 @@ const SignUpTeam = ({navigation}) => {
         value={name} 
         placeholder="Enter Name"
         placeholderTextColor="black"
-        keyboardType="text"
+        keyboardType="default"
         //left={<TextInput.Icon name="account" />}
         onChangeText={onChangeName}
         clearButtonMode={'always'}
@@ -113,7 +113,7 @@ const SignUpTeam = ({navigation}) => {
         value={email}
         placeholder="Enter Email"
         placeholderTextColor="black"
-        keyboardType="Default"
+        keyboardType="email-address"
         //left={<TextInput.Icon name="form-textbox-password" />}
         onChangeText={onChangeEmail} 
         clearButtonMode={'always'}

@@ -148,9 +148,9 @@ const VehicleData = () => {
             <Text>{`Loading Capacity: ${vehicle.loadingCapacity}`}</Text>
             <Text>{`Category: ${vehicle.vehicleCategory}`}</Text>
             <View style= {{flexDirection:'row'}}>
-            <TouchableOpacity style={styles.editButton} onPress={() => handleEditVehicle(vehicle.id)}>
+            {/* <TouchableOpacity style={styles.editButton} onPress={() => handleEditVehicle(vehicle.id)}>
                 <Text style={styles.buttonText}>Edit</Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             <TouchableOpacity style={styles.buttonContainerdelete} onPress={() => handleDeleteVehicle(vehicle.id)}>
                 <Text style = {styles.deleteButtontext}>Delete</Text>
             </TouchableOpacity>
@@ -202,16 +202,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#BF9000'
   },
-  editButton: {
-    backgroundColor: '#007cc3',
-    width:100,
-    alignItems: 'center',
-    justifyContent: 'center', 
-    padding: 5,
-    borderRadius: 5,
-    marginTop: 10,
-    marginRight:5,
-  },
+  // editButton: {
+  //   backgroundColor: '#007cc3',
+  //   width:100,
+  //   alignItems: 'center',
+  //   justifyContent: 'center', 
+  //   padding: 5,
+  //   borderRadius: 5,
+  //   marginTop: 10,
+  //   marginRight:5,
+  // },
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
