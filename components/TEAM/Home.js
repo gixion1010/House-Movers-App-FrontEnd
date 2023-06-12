@@ -29,13 +29,7 @@ const Home = ({navigation}) => {
               styles.button3,
               pressed && {opacity: 1.8, backgroundColor:'#987200'},
       ]} onPress={() => {navigation.navigate('Orders');}}>
-        <Text style={styles.textbutton3}> View Orders </Text> 
-      </Pressable>
-      <Pressable style={({pressed}) => [
-              styles.button4,
-              pressed && {opacity: 1.8, backgroundColor:'#987200'},
-      ]} onPress={() => {navigation.navigate('Chats');}}>
-        <Text style={styles.textbutton4}> Chats </Text> 
+        <Text style={styles.textbutton3}> Orders </Text> 
       </Pressable>
       </View>
     </View>
@@ -80,7 +74,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     //elevation: 3,
     backgroundColor:'#BF9000',
-    marginTop:5,
+    marginTop:10,
+    marginBottom:10,
   },
   textbutton1:{
     fontSize: 16,
@@ -98,6 +93,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor:'#BF9000',
     marginTop:10,
+    marginBottom:10,
   },
   textbutton2:{
     fontSize: 16,
@@ -110,7 +106,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 80,
+    paddingHorizontal: 103,
     borderRadius: 15,
     elevation: 3,
     backgroundColor:'#BF9000',
@@ -123,21 +119,5 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'black',
   },
-  button4:{
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 106,
-    borderRadius: 15,
-    elevation: 3,
-    backgroundColor:'#BF9000',
-    marginTop:10,
-  },
-  textbutton4:{
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'black',
-  }
+
 });

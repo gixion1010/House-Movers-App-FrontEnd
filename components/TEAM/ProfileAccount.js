@@ -200,11 +200,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   value: {
-    marginTop:5,
+    marginTop: 5,
     fontSize: 16,
-    fontWeight:'bold',
+    fontWeight: 'bold',
     color: 'white',
-    secureTextEntry:true,
+    secureTextEntry: true,
   },
   textinputcontainer: {
     borderColor: '#000000',

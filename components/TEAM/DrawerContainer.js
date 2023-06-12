@@ -8,7 +8,6 @@ import VehicleData from "./VehicleData";
 import EmployeeData from "./EmployeeData";  
 import Orders from "./Orders";
 import ProfileAccount from "./ProfileAccount"; 
-import Chats from "./Chats";
 import SignOut from './SignOut';
 const Drawer = createDrawerNavigator();
 export default function DrawerContainer(navigation) {
@@ -64,18 +63,6 @@ export default function DrawerContainer(navigation) {
           },}}/>
           <Drawer.Screen name='Orders' component={Orders} options={{
           title:"Orders",
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
-          headerTitleAlign: "center",
-          headerStyle: {
-            backgroundColor: '#BF9000',
-          },
-          headerTintColor: '#000000',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },}}/>
-          <Drawer.Screen name='Chats' component={Chats} options={{
-          title:"Chats",
           gestureEnabled: true,
           gestureDirection: 'horizontal',
           headerTitleAlign: "center",
