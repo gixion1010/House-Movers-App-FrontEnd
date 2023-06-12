@@ -16,7 +16,6 @@ const EmployeeData = (navigation) => {
   const [phone, setPhone] = useState('');
   const [cnic, setCnic] = useState('');
   const [roll, setroll] = useState('');
-  const [image, setImage] = useState(null);
   const [employeeList, setEmployeeList] = useState([]);
 
   fetch('http://127.0.0.1:3000/viewteam', {
